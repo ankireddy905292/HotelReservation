@@ -1,7 +1,6 @@
 package com.hotel;
 
-import java.util.ArrayList;
-
+import java.util.*;
 class Hotel{
     public String hotelName;
 
@@ -32,6 +31,7 @@ class Hotel{
         return "Hotel Name: "+hotelName +"Hotel Price: "+hotelPrice;
     }
 }
+
 public class HotelReservationMethods {
     public static ArrayList<Hotel> hotelDetails;
 
@@ -42,6 +42,11 @@ public class HotelReservationMethods {
     public static void addHotel(String hotelName, Integer hotelPrice) {
         Hotel adder = new Hotel(hotelName, hotelPrice);
         hotelDetails.add(adder);
+    }
+
+    public void getMinPriceHotel(){
+        Hotel min =  hotelDetails.stream().min(Comparator.comparing(Hotel::getHotelPrice)).orElseThrow();
+        System.out.println(min);
     }
 
     public static void getHotelDetails() {
@@ -62,7 +67,3 @@ public class HotelReservationMethods {
         System.out.println(hotelDetails);
     }
 }
-
-
-
-

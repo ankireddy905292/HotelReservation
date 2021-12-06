@@ -5,6 +5,8 @@ public class HotelReservation {
 
         HotelReservationMethods hotelReservationMethods = new HotelReservationMethods();
         HotelReservationMethods.viewHotels();
+        hotelReservationMethods.getMinPriceHotel();
+        System.out.println("Welcome to solve hotel Reservation System");
     }
 }
 
